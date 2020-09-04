@@ -1,4 +1,4 @@
-# calculator
+# Calculator
 
 The project implement a command-line RPN calcultor.
 
