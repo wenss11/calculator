@@ -16,10 +16,7 @@ public class RPNCalculatorTest {
     @Test
     public void calcultor() {
 
-        //测试数据
-        String argsErr= "  @ ";
-        String negativeErr = "clear -2 sqrt";
-        String divErr = "clear 3 0 /";
+        //test data
         String clear = "clear";
         String rpn1= "5 2";
         String rpn2= "clear 2 sqrt";
@@ -31,7 +28,6 @@ public class RPNCalculatorTest {
         String rpn8= "clear 1 2 3 4 5 * * * *";
         String rpn9= "clear 1 2 3 * 5 + * * 6 5";
 
-        //正常测试
         Assert.assertEquals(calculator.calcultor(clear),"");
         Assert.assertEquals(calculator.calcultor(rpn1),"5 2");
         Assert.assertEquals(calculator.calcultor(rpn2),"1.4142135623");
