@@ -4,6 +4,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The {@code RPNCalculator} test class
+ *
+ * @author  wenss
+ * @version V1.0
+ * @since   JDK1.8
+ */
 public class RPNCalculatorTest {
 
     ICalculator calculator = null;
@@ -14,7 +21,7 @@ public class RPNCalculatorTest {
     }
 
     @Test
-    public void calcultor() {
+    public void testCalcultor() {
 
         //test data
         String clear = "clear";

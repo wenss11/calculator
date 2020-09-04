@@ -6,17 +6,24 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * The {@code RPNCalculator} test class
+ *
+ * @author  wenss
+ * @version V1.0
+ * @since   JDK1.8
+ */
 public class BaseOperationTest {
 
     @Test
-    public void operate() {
+    public void testOperate() {
         try {
             BaseOperation baseOperation = new BaseOperation();
 
             Stack<Double> stkNum = new Stack<>();
             Stack<List<Double>> stkLog = new Stack<>();
 
-            //正常测试
+            //normal test
             stkNum.push(1.0);
             stkNum.push(-2.0);
             boolean result1 = baseOperation.operate(stkNum, stkLog, "+", 0);
@@ -35,12 +42,12 @@ public class BaseOperationTest {
             Assert.assertTrue(result4);
             Assert.assertTrue(stkNum.peek()==-2);
 
-            //操作数不足
+            //insufficient parometers
             boolean result5 = baseOperation.operate(stkNum, stkLog, "+", 0);
             Assert.assertTrue(!result5);
             Assert.assertTrue(stkNum.size()==1);
 
-            //除数为0
+            // / by zero
             try {
                 stkNum.push(0.0);
                 baseOperation.operate(stkNum, stkLog, "/", 0);
@@ -49,7 +56,7 @@ public class BaseOperationTest {
                 Assert.assertEquals(e.getMessage(),"/ by zero!");
             }
 
-            //操作符异常
+            //illegal operator
             try {
                 stkNum.push(1.0);
                 stkNum.push(1.0);
